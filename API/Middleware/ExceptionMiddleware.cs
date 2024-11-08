@@ -1,7 +1,6 @@
 using System.Net;
 using System.Text.Json;
 using Application.Core;
-using AutoMapper.Configuration.Annotations;
 
 namespace API.Middleware
 {
