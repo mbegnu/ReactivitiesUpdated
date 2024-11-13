@@ -33,7 +33,11 @@ namespace API.Controllers
 
             var result = await _userManager.CheckPasswordAsync(user, loginDto.Password);
 
-            if (result) return CreateUserObject(user);
+            if (result) {
+                var u = CreateUserObject(user);
+                //return CreateUserObject(user);
+                return u;
+            }
            
             return Unauthorized();
         }
@@ -78,7 +82,7 @@ namespace API.Controllers
             return CreateUserObject(user);
         }
 
-         private UserDto CreateUserObject(AppUser user)
+        private UserDto CreateUserObject(AppUser user)
         {
             return new UserDto
             {
