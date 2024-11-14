@@ -57,7 +57,7 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                             floated='left' 
                             basic 
                             content={activity.isCancelled ? 'Re-activate Activity' : 'Cancel Activity'} 
-                            onclick={cancelActivityToggle} 
+                            onClick={cancelActivityToggle} 
                             loading={loading}
                         />
                         <Button disabled={activity.isCancelled} as={Link} to={`/manage/${activity.id}`} color='orange' floated='right'>

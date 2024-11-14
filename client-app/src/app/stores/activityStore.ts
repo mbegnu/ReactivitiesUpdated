@@ -76,14 +76,7 @@ export default class ActivityStore {
 
     private setActivity = (activity: Activity) => {
         const user = store.userStore.user;
-        console.log('displayName=');
-        console.log(user?.displayName);
-        console.log('hostname=');
-        console.log(activity.hostUsername)
         if (user) {
-            console.log('There is a user');
-            console.log('username=')
-            console.log(user.username)
             activity.isGoing = activity.attendees!.some(
                 a => a.username === user.username
             )
