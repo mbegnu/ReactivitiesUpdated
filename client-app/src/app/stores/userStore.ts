@@ -50,4 +50,9 @@ export default class UserStore {
     {
         if (this.user) this.user.image = image;
     }
+
+    setDisplayName = (displayName: string) =>
+    {
+        this.user!.displayName = displayName;
+    }
 }
