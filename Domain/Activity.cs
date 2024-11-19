@@ -10,8 +10,8 @@ namespace Domain
         public string City { get; set; }
         public string Venue { get; set; }
         public bool Iscancelled { get; set; }
-
         public ICollection<ActivityAttendee> Attendees {get;set;} = [];
+        public ICollection<Comment> Comments { get; set; } = [];
 
     }
 }
