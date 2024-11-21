@@ -185,6 +185,8 @@ export default class ProfileStore {
         } catch (error) {
             console.log(error);
             runInAction(() => this.loadingFolllowings = false);
+        } finally {
+            runInAction(() => this.loadingFolllowings = false);
         }
     }
  }

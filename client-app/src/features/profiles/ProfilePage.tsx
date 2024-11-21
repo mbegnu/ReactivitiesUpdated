@@ -13,9 +13,9 @@ export default observer(function ProfilePage() {
 
   useEffect(() => {
     loadProfile(username!);
-    return () => {
-      setActiveTab(0);
-    }
+     return () => {
+       setActiveTab(0);
+     }
   }, [loadProfile, username, setActiveTab])
 
   return (
