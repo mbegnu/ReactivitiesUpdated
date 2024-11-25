@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite"
-import { Button, Card, Grid, Header, Image, Tab } from "semantic-ui-react"
+import { Button, Card, Grid, Header, Image, TabPane } from "semantic-ui-react"
 import { Photo, Profile } from "../../app/models/profile"
 import { useStore } from "../../app/stores/store";
 import { SyntheticEvent, useState } from "react";
@@ -35,7 +35,7 @@ export default observer(function ProfilePhotos({profile} : Props) {
 
 
   return (
-    <Tab.Pane>
+    <TabPane>
         <Grid>
             <Grid.Column width={16}>
                 <Header floated="left" icon='image' content='Photos' />
@@ -76,6 +76,6 @@ export default observer(function ProfilePhotos({profile} : Props) {
                     )}
             </Grid.Column>
         </Grid>
-    </Tab.Pane>
+    </TabPane>
   )
 })

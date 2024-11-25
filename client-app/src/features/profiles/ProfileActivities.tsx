@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { Card, Grid, Header, Image, Tab, TabProps } from 'semantic-ui-react';
+import { Card, Grid, Header, Image, Tab, TabPane, TabProps } from 'semantic-ui-react';
 import { useStore } from '../../app/stores/store';
 import { SyntheticEvent, useEffect } from 'react';
 import { UserActivity } from '../../app/models/profile';
@@ -18,13 +18,13 @@ export default observer(function ProfileActivities() {
         loadUserActivities(profile!.username);
     }, [loadUserActivities, profile])
 
-    function handleTabChange(e: SyntheticEvent, data: TabProps)
+    function handleTabChange(_: SyntheticEvent, data: TabProps)
     {
         loadUserActivities(profile!.username, panes[data.activeIndex as number].pane.key);
     }
        
   return (
-    <Tab.Pane loading={loadingActivities}>
+    <TabPane loading={loadingActivities}>
         <Grid>
             <Grid.Column width={16}>
                 <Header floated='left' icon='calendar' content={'Activities'} />
@@ -52,6 +52,6 @@ export default observer(function ProfileActivities() {
                 </Card.Group>
             </Grid.Column>
         </Grid>
-    </Tab.Pane>
+    </TabPane>
   )
 })
