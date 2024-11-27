@@ -49,11 +49,13 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.Use(async (context, next) => 
-    {
-        context.Response.Headers.Append("Strict-Transport-Security", "max-age=31536000");
-        await next.Invoke();
-    });
+
+    app.UseHsts(opt => opt.MaxAge(days: 365));
+    // app.Use(async (context, next) => 
+    // {
+    //     context.Response.Headers.Append("Strict-Transport-Security", "max-age=31536000");
+    //     await next.Invoke();
+    // });
 }
 
 app.UseCors("CorsPolicy");
